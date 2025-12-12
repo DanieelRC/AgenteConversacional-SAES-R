@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Modelos y Datos Grandes
+models/*.gguf
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log

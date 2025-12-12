@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+pydantic
+llama-cpp-python
+sentence-transformers
+keybert
+faiss-cpu
+spacy
+unidecode
+pymupdf
+numpy
+tqdm
+cachetools
+python-multipart
