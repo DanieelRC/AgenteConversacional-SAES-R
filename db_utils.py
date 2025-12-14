@@ -3,19 +3,23 @@ from mysql.connector import pooling
 import datetime
 from typing import Optional, Dict, Any
 import logging
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
-# Configuración del pool de conexión (Asegúrate de que estos valores sean correctos para tu entorno)
+# Configuración del pool de conexión a la base de datos MySQL
 db_pool = pooling.MySQLConnectionPool(
     pool_name="saes_pool",
     pool_size=32,
     pool_reset_session=True,
-    host="localhost",
-    user="root",
-    password="root", # O la contraseña que uses
-    database="SAES",
-    auth_plugin='mysql_native_password'
+    host=os.getenv("DB_HOST", "localhost"),
+    user=os.getenv("DB_USER", "root"),
+    password=os.getenv("DB_PASSWORD", "root"),
+    database=os.getenv("DB_NAME", "SAES"),
+    auth_plugin=os.getenv("DB_AUTH_PLUGIN", "mysql_native_password")
 )
 
 def _get_db_connection():

@@ -12,3 +12,5 @@ numpy
 tqdm
 cachetools
 python-multipart
+python-dotenv
+mysql-connector-python
